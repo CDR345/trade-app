@@ -1,0 +1,25 @@
+<app-trade-add></app-trade-add>
+<div>
+  <h2>Trade List</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Trade Id</th>
+                    <th>Ticker</th>
+                    <th>Type</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                   
+                    @for(t of trades; track t.id){
+                        <app-trade [trade]="t"></app-trade>
+                    }
+                    
+                </tbody>
+        </table>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<p>Add new Trade</p>
+<div>
+    
+<form [formGroup]="tradeForm" (ngSubmit)="submitForm()">
+  <label for="stockTicker">Stock Ticker:</label>
+  <select id="stockTicker" formControlName="stockTicker">
+    <option value="AMZN">AMZN</option>
+    <option value="AAPL">AAPL</option>
+    <option value="NFLX">NFLX</option>
+    <option value="C">C</option>
+  </select><br><br>
+  
+
+  <label for="volume">Volume:</label>
+  <input type="number" formControlName="volume" placeholder="volume"><br><br>
+
+  <label for="buyOrSell">Buy or Sell:</label>
+  <select id="buyOrSell" formControlName="buyOrSell">
+    <option value="buy">Buy</option>
+    <option value="sell">Sell</option>
+  </select><br><br>
+
+  <label for="price">Price:</label>
+  <input type="number" formControlName="price" step="0.01" placeholder="price"><br><br>
+
+  <button type="submit" >Add Trade</button>  
+</form>
+</div>

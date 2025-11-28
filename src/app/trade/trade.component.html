@@ -1,0 +1,20 @@
+<!--ID:{{trade.id}} - {{trade.stockTicker}} - {{trade.buyOrSell}} - Volume: {{trade.volume}} - Price: {{trade.price}} - Status: {{trade.tradeStatus?.statusCode}} -->
+<div>
+    <tr>
+        <td>{{ trade.id }}</td>
+        <td>{{ trade.stockTicker }}</td>
+        <td>{{ trade.buyOrSell }}</td>
+        <td>{{ trade.volume }}</td>
+        <td>{{ trade.price }}</td>
+      <!--  <td>{{ trade.tradeStatus?.statusCode }}</td> -->
+     <!-- <td *ngIf= "trade.tradeStatus?.statusCode != null &&  trade.tradeStatus?.statusCode === 0">Pending</td>     -->
+    
+        <td [ngSwitch]="trade.tradeStatus?.statusCode">
+            <span *ngSwitchCase="0">Pending</span>
+            <span *ngSwitchCase="1">Filled</span>
+            <span *ngSwitchDefault>Reject</span>
+        </td>     
+    </tr>
+      
+  <br/>
+</div>
